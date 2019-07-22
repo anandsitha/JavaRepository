@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report>
+
+<PROVIDER title="Java Code Review Complete" name="Java Code Review" id="codereview.java.analysisProvider">
+	<CATEGORY name="JUnit" id="codereview.java.rules.test">
+		<RULE name="Always override junit.framework.TestCase.suite() as a public static method  " id="codereview.java.rules.AlwaysDeclareJunitTestCaseSuiteWithCorrectModifier" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid incorrect name format for TestSuite classes" id="codereview.java.rules.test.AlwaysStartTestSuiteClassNameWithTestSuite" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always call super.setUp() from JUnit TestCase's setUp() method" id="codereview.java.rules.AlwaysCallSupersetupInSetupFromJunitTests" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always override 'tearDown()' method in a JUnit test case" id="codereview.java.rules.RuleOverrideTearDownInJUnitTestCase" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Always override 'setUp()' method in a JUnit test case" id="codereview.java.rules.RuleOverrideSetUpInJUnitTestCase" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid incorrect name format for JUnit TestCase subclasses" id="codereview.java.test.conventions.AlwaysObeyJunitTestcaseNamingConvention" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always call super.tearDown() from JUnit TestCase's tearDown() method" id="codereview.java.rules.AlwaysCallSuperTeardownInTeardownFromJunitTests" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling constructors to setup test cases" id="codereview.java.rules.AvoidUsingConstructorsToSetupTestCases" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+	</CATEGORY>
+	<CATEGORY name="Performance" id="analysis.codereview.java.performance">
+		<RULE name="Avoid using Thread.dumpStack() in production code" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.profiling.RulePerformanceDumpStack" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid profiling with java.lang.Runtime.freeMemory()" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.profiling.RulePerformanceFreeMemory" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid profiling with java.lang.Runtime.traceMethodCalls()" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.profiling.RulePerformanceTraceMethodCalls" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Throwable.printStackTrace() in production code" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.profiling.RulePerformancePrintStackTrace" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+			<result fileId="1" line="83" />
+			<result fileId="1" line="180" />
+		</RULE>
+		<RULE name="Avoid using System.out or System.err in production code" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.profiling.RulePerformanceSystemOurErr" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+			<result fileId="2" line="20" />
+			<result fileId="3" line="16" />
+			<result fileId="1" line="177" />
+			<result fileId="4" line="7" />
+		</RULE>
+		<RULE name="Avoid profiling with java.lang.Runtime.traceInstructions()" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.profiling.RulePerformanceTraceInstructions" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid profiling with java.lang.Runtime.totalMemory()" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.profiling.RulePerformanceTotalMemory" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Close open JDBC resources in finally() blocks" id="codereview.java.rules.performance.memory.RuleCloseJDBCResourcesInFinally" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid the throw statement inside of finally" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.memory.RulePerformanceThrowInFinally" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling finalize() except in the finally block of the finalize method" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.memory.RulePerformanceExplicitFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid instantiating Strings using new" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.memory.RulePerformanceNewString" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid instantiating unnecessary temporaries when converting primitive types to java.lang.String" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.memory.RulePerformancePrimitiveTypeTemporaries" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Runtime.runFinalizersOnExit()" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.memory.RulePerformanceRunFinalizersOnExit" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid instantiating a Number using new" id="codereview.java.rules.performance.memory.RuleAvoidNewFloatDouble" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Runtime.runFinalization()" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.memory.RulePerformanceRunFinalization" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid declaring finalize() public" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.memory.RulePerformancePublicFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid using static collections" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.memory.RulePerformanceStaticCollection" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Close open streams in finally() blocks" id="codereview.java.rules.performance.memory.RuleCloseStreamInFinallyBlock" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+			<result fileId="1" line="48" />
+			<result fileId="1" line="102" />
+			<result fileId="1" line="175" />
+		</RULE>
+		<RULE name="Avoid invoking Garbage Collection" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.memory.RulePerformanceRuntimeGc" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid returning from finally" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.memory.RulePerformanceReturnFromFinally" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid instantiating Booleans using new" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.memory.RulePerformanceNewBoolean" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Reuse resources for JDBC connections" id="codereview.java.rules.performance.memory.RuleReUseJDBCDataSources" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Use javax.sql.DataSource to open JDBC connections" id="codereview.java.rules.performance.memory.RuleUseDataSourceForJDBCConnect" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid java.lang.String + operator in loops" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.memory.RulePerformanceStringPlusInLoops" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Close open JDBC connections in finally() blocks" id="codereview.java.rules.performance.memory.RuleCloseJDBCConnectionInFinally" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always call super.finalize() in the finally block of finalize() methods" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.memory.RulePerformanceSuperFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid creating empty JAR or ZIP file entries" id="codereview.java.rules.performance.memory.RuleAvoidEmptyZipJarFile" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid synchronized blocks inside loops" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.speed.RulePerformanceSynchronizeInLoops" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always instantiate collections with a specific size" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.speed.RulePerformanceCollectionsWithSize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+			<result fileId="3" line="8" />
+			<result fileId="1" line="43" />
+			<result fileId="1" line="71" />
+		</RULE>
+		<RULE name="Avoid checking the length of a String by invoking String.equals(&quot;&quot;)" id="codereview.java.rules.performance.speed.RuleAvoidStringEqualsBlank" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.net.URL equals() and hashCode() methods" id="codereview.java.rules.performance.speed.RuleAvoidURLEqualsHashCode" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling methods in conditions of for loops" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.speed.RulePerformanceMethodLoopCondition" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid declaring or assigning variables in a loop that are not dependent on the loop condition " id="codereview.java.rules.performance.speed.RuleAvoidConstantsInLoop" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid unnecessary equality operations with booleans" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.speed.RulePerformanceUnnecessaryEquality" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid try catch finally blocks inside loops" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.speed.RulePerformanceTryCatchInLoops" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid Map and Set of java.net.URL objects" id="codereview.java.rules.performance.speed.RuleAvoidMapSetWithUrl" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid creating a new object for the purpose of invoking getClass() on it" id="codereview.java.rules.performance.speed.RuleAvoidNewGetClass" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Class.forName()" id="com.ibm.xtools.analysis.codereview.java.j2se.performance.speed.RulePerformanceClassForName" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid multiple invocations of the same method" id="codereview.java.rules.statement.RuleStatementSameMethodInvocation" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+			<result fileId="3" line="9" />
+			<result fileId="3" line="11" />
+			<result fileId="1" line="122" />
+			<result fileId="1" line="133" />
+		</RULE>
+	</CATEGORY>
+	<CATEGORY name="Design Principles" id="analysis.codereview.java.designprinciples">
+		<RULE name="Avoid nesting more than 4 if statements" id="com.ibm.xtools.analysis.codereview.java.j2se.designprinciples.complexity.RuleNestedIf" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid conditional expressions with 4 or more operators" id="com.ibm.xtools.analysis.codereview.java.j2se.designprinciples.complexity.RuleLongConditional" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid nesting more than 3 loops" id="com.ibm.xtools.analysis.codereview.java.j2se.designprinciples.complexity.RuleNestedLoop" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid nesting more than 1 classes" id="com.ibm.xtools.analysis.codereview.java.j2se.designprinciples.complexity.RuleNestedInner" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid nesting more than 1 try catch blocks" id="com.ibm.xtools.analysis.codereview.java.j2se.designprinciples.complexity.RuleNestedTry" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+	</CATEGORY>
+	<CATEGORY name="Naming" id="analysis.codereview.java.naming">
+		<RULE name="Avoid multiple overloaded methods with the same number of parameters" id="com.ibm.xtools.analysis.codereview.java.j2se.naming.conflicts.RuleConflictsMultipleOverloadedMethods" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+	</CATEGORY>
+	<CATEGORY name="Globalization" id="com.ibm.xtools.analysis.codereview.java.globalization">
+		<RULE name="Avoid using java.lang.String.concat(java.lang.String)" id="com.ibm.xtools.analysis.codereview.java.globalization.translation.stringconcat" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.String + operator" id="com.ibm.xtools.analysis.codereview.java.globalization.translation.stringplus" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+			<result fileId="1" line="177" />
+		</RULE>
+		<RULE name="Avoid using locale names as method parameters" id="com.ibm.xtools.analysis.codereview.java.globalization.localehandling.localestrings" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.text.NumberFormat.getCurrencyInstance(java.util.Locale)" id="com.ibm.xtools.analysis.codereview.java.globalization.localehandling.currencyinstance" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.awt.TextField" id="com.ibm.xtools.analysis.codereview.java.globalization.uispecific.textfield" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.awt.TextArea" id="com.ibm.xtools.analysis.codereview.java.globalization.uispecific.textarea" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid hard coding font names" id="com.ibm.xtools.analysis.codereview.java.globalization.uispecific.hardcodedfontnames" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid placing AWT/Swing components by specifying the absolute position" id="com.ibm.xtools.analysis.codereview.java.globalization.uispecific.setbounds" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using javax.mail.internet.MimeBodyPart.setText(java.lang.String)" id="com.ibm.xtools.analysis.codereview.java.globalization.encoding.mimebodytext" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using javax.mail.internet.MimeMessage.setSubject(java.lang.String)" id="com.ibm.xtools.analysis.codereview.java.globalization.encoding.mimemessagesubject" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.io.InputStreamReader with the default character set" id="com.ibm.xtools.analysis.codereview.java.globalization.encoding.inputstreamreader" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using javax.mail.internet.MimeBodyPart.setDescription(java.lang.String)" id="com.ibm.xtools.analysis.codereview.java.globalization.encoding.mimebodydescription" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using javax.mail.internet.MimeMessage.setText(java.lang.String)" id="com.ibm.xtools.analysis.codereview.java.globalization.encoding.mimemessagetext" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.io.FileWriter" id="com.ibm.xtools.analysis.codereview.java.globalization.encoding.filewriter" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.io.FileReader" id="com.ibm.xtools.analysis.codereview.java.globalization.encoding.filereader" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using javax.mail.internet.MimeMessage.setDescription(java.lang.String)" id="com.ibm.xtools.analysis.codereview.java.globalization.encoding.mimemessagedescription" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.io.OutputStreamWriter with the default character set" id="com.ibm.xtools.analysis.codereview.java.globalization.encoding.outputstreamwriter" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Integer.toString() to convert an integer to a string" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.integertostring" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Short.parseShort() to parse locale-sensitive strings" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.parseshort" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.util.Date.toString() to convert a date to a string" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.datetostring" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Float.toString() to convert a float to a string" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.floattostring" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Long.toString() to convert a long to a string" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.longtostring" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Integer.parseInt() to parse locale-sensitive strings" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.parseint" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.math.BigDecimal.toString() to convert a big decimal to a string" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.bigdecimaltostring" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Byte.parseByte() to parse locale-sensitive strings" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.parsebyte" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Float.parseFloat() to parse locale-sensitive strings" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.parsefloat" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.math.BigInteger.toString() to convert a big integer to a string" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.bigintegertostring" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Double.parseDouble() to parse locale-sensitive strings" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.parsedouble" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Short.toString() to convert a short to a string" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.shorttostring" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Double.toString() to convert a double to a string" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.doubletostring" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.sql.Time.toString() to convert a time to a string" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.sqltimetostring" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Long.parseLong() to parse locale-sensitive strings" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.parselong" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Byte.toString() to convert a byte to a locale-sensitive string" id="com.ibm.xtools.analysis.codereview.java.globalization.culturalformatting.bytetostring" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.String.compareTo() to compare locale-sensitive strings" id="com.ibm.xtools.analysis.codereview.java.globalization.stringhandling.stringcompareto" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.String.String(byte[]) for multilingual strings" id="com.ibm.xtools.analysis.codereview.java.globalization.stringhandling.stringbyteconstructor" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.String.charAt() for multilingual strings" id="com.ibm.xtools.analysis.codereview.java.globalization.stringhandling.stringcharat" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid performing direct character literal comparisons" id="com.ibm.xtools.analysis.codereview.java.globalization.stringhandling.charcomparison" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Character.toUpperCase()" id="com.ibm.xtools.analysis.codereview.java.globalization.stringhandling.chartouppercase" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.util.StringTokenizer for strings containing Unicode supplementary characters" id="com.ibm.xtools.analysis.codereview.java.globalization.stringhandling.stringtokenizer" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.String.indexOf() for multilingual strings" id="com.ibm.xtools.analysis.codereview.java.globalization.stringhandling.stringindexof" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.String.equals() for multilingual strings" id="com.ibm.xtools.analysis.codereview.java.globalization.stringhandling.stringequals" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+			<result fileId="1" line="44" />
+			<result fileId="1" line="44" />
+			<result fileId="1" line="97" />
+		</RULE>
+		<RULE name="Avoid using java.lang.String.valueOf() for locale-sensitive numbers" id="com.ibm.xtools.analysis.codereview.java.globalization.stringhandling.stringvalueof" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.String.getBytes()" id="com.ibm.xtools.analysis.codereview.java.globalization.stringhandling.stringgetbytes" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.String.toLowerCase()" id="com.ibm.xtools.analysis.codereview.java.globalization.stringhandling.stringtolowercase" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Character.toLowerCase()" id="com.ibm.xtools.analysis.codereview.java.globalization.stringhandling.chartolowercase" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.String.toUpperCase()" id="com.ibm.xtools.analysis.codereview.java.globalization.stringhandling.stringtouppercase" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.String.split() for strings with combined characters" id="com.ibm.xtools.analysis.codereview.java.globalization.stringhandling.stringsplit" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+	</CATEGORY>
+	<CATEGORY name="J2EE Best Practices" id="codereview.java.j2ee.bestpractices">
+		<RULE name="Avoid calling java.lang.Runtime from any servlet" id="com.ibm.xtools.analysis.codereview.java.j2ee.performance.RuleAvoidRuntime" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.util.zip.* from any servlet" id="com.ibm.xtools.analysis.codereview.java.j2ee.performance.RuleAvoidZip" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.System from any servlet" id="com.ibm.xtools.analysis.codereview.java.j2ee.performance.RuleAvoidSystem" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Process from any servlet" id="com.ibm.xtools.analysis.codereview.java.j2ee.performance.RuleAvoidProcess" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.rmi.* from any servlet" id="com.ibm.xtools.analysis.codereview.java.j2ee.performance.RuleAvoidRmi" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.reflect.* from any servlet" id="com.ibm.xtools.analysis.codereview.java.j2ee.performance.RuleAvoidReflect" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.sql.DriverManager from any servlet" id="com.ibm.xtools.analysis.codereview.java.j2ee.performance.RuleAvoidDriverManager" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Compiler from any servlet" id="com.ibm.xtools.analysis.codereview.java.j2ee.performance.RuleAvoidCompiler" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.util.jar.* from any servlet" id="com.ibm.xtools.analysis.codereview.java.j2ee.performance.RuleAvoidJar" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Runnable.run() from any servlet" id="com.ibm.xtools.analysis.codereview.java.j2ee.maintainability.RuleAvoidRunnableRun" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.ThreadGroup from any servlet" id="com.ibm.xtools.analysis.codereview.java.j2ee.maintainability.RuleAvoidThreadGroup" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Thread from any servlet" id="com.ibm.xtools.analysis.codereview.java.j2ee.maintainability.RuleAvoidThread" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling javax.sound.* from any servlet code" id="com.ibm.xtools.analysis.codereview.java.j2ee.correctness.RuleSoundServlet" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.io.* from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleIOFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.sql.Statement from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleStatementFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling javax.sql.* from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleSqlFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.net.* from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleNetFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.ClassLoader from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleClassLoaderFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling javax.naming.Context from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleContextFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.applet.* from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleAppletFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling javax.transaction.* from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleTransactionFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.sql.Connection from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleConnectionFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling org.omg.* from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleOmgFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Runnable from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleRunnableFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling javax.rmi.PortableRemoteObject from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RulePortableRemoteObjectFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.ref.* from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleRefFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.sql.Driver from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleDriverFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.security.* from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleSecurityFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.beans.* from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleBeansFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.sql.ResultSet from a servlet finalize() method" id="com.ibm.xtools.analysis.codereview.java.j2ee.garbagecollection.RuleResultSetFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.awt.* from servlet code" id="com.ibm.xtools.analysis.codereview.java.j2ee.datarace.RuleAwtServlet" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling javax.swing.* from any servlet" id="com.ibm.xtools.analysis.codereview.java.j2ee.datarace.RuleSwingServlet" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+	</CATEGORY>
+	<CATEGORY name="J2SE Best Practices" id="codereview.java.j2sebestpractices">
+		<RULE name="Avoid invoking a static java.lang.Math method on a constant" id="codereview.java.rules.math.RuleAvoidMathConstant" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid invoking nextDouble() to generate a random int" id="codereview.java.rules.math.RuleAvoidRandomNextDouble" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid casting an int value to double and then passing the value to Math.ceil()" id="codereview.java.rules.math.RuleAvoidIntCastToDoubleCeil" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid casting an int value to float and then passing the value to Math.round()" id="codereview.java.rules.math.RuleAvoidIntCastToFloatRound" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid computation of a variable with itself" id="codereview.java.rules.math.RuleAvoidSelfComputation" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid casting the result of integer division to double" id="codereview.java.rules.math.RuleAvoidDoubleIntDivision" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid modulus values of one" id="codereview.java.rules.math.RuleMathAvoidModOne" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid confusing multiplication of int remainder by a constant int value" id="codereview.java.rules.math.RuleMathIntRemainderMultiply" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using var%2==1 to check if a variable is an odd value" id="codereview.java.rules.math.RuleAvoidModTwoCheckOdd" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling toString() on String objects" id="codereview.java.rules.NeverCalltoStringOnStringObjects" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Use StringBuffer instead of String for non-constant String objects" id="codereview.java.rules.RuleUseStringBufferForNonConstant" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Use String instead of StringBuffer for constant String objects" id="codereview.java.rules.RuleUseStringForConstant" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always use StringTokenizer for parsing instead of indexOf() or substring() " id="codereview.java.rules.AlwaysUseStringTokenizerForStringParsing" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid creating a primitive type using auto-boxing in order to call toString on it" id="codereview.java.rules.string.RuleAvoidBoxedPrimitiveToString" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid checking if String.indexOf() is a positive value" id="codereview.java.rules.RuleAvoidCheckIndexOfPositive" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling toString() on an array" id="codereview.java.rules.string.RuleAvoidArrayToString" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid replacing '.' using the String replace methods" id="codereview.java.rules.string.RuleAvoidReplaceDot" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always provide a Locale parameter " id="codereview.java.rules.string.RuleStringUseLocale" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling subString(0) on a string object" id="codereview.java.rules.string.RuleAvoidSubStringZero" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid chaining assignment operators" id="codereview.java.rules.initialization.RuleInitializationChainingAssignments" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid creating a new class instance, in the class static initializer, before all static final fields are initialized" id="codereview.java.rules.initialization.RuleIntializationClassInstanceInStaticInit" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid initialization of a superclass with its subclass" id="codereview.java.rules.initialization.RuleAvoidInitializeSuperWithSub" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always initialize static fields" id="codereview.java.rules.initialization.RuleInitializationInitializeStaticFields" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid changing the value of a method parameter" id="codereview.java.rules.initialization.RuleInitializationAssigningMethodParameter" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Class.getDeclaredField()" id="codereview.java.rules.reflection.RuleReflectionGetDeclaredField" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Class.getDeclaredMethod()" id="codereview.java.rules.reflection.RuleReflectionGetDeclaredMethod" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Class.getMethod" id="codereview.java.rules.reflection.RuleReflectionGetMethod" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Class.getField()" id="codereview.java.rules.reflection.RuleReflectionGetField" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid empty finalize() method methods" id="codereview.java.rules.performance.memory.NeverHaveEmptyFinalizeMethod" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid overloading the finalize() methods" id="codereview.java.rules.performance.memory.NeverOverloadFinalizeMethod" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid unnecessary finalize() methods" id="codereview.java.rules.performance.memory.NeverHaveUnnecessaryFinalizeMethod" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid removing listeners inside finalize methods" id="codereview.java.rules.performance.memory.AvoidRemovingListenersInsideFinalize" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Always call super.finalize()" id="codereview.java.rules.finalize.RuleAlwaysCallSuperFinalizeMethod" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Never invoke finalize() method" id="codereview.java.rules.finalize.RuleNeverInvokeFinalizeMethod" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using text labels in 'switch' statements" id="codereview.java.rules.RuleAvoidLabelsInSwitchStatement" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always provide the default label in switch statements" id="codereview.java.rules.switches.RuleSwitchDefaultLabel" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Always provide break at the end of every case statement" id="codereview.java.rules.switches.RuleSwitchBreak" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid switch statements with few branches, use if else instead" id="codereview.java.rules.switches.RuleSwitchBranch" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Always invoke super.clone() from a clone()" id="codereview.java.rules.cloneable.RuleCloneableSuperClone" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Always declare clone() method public" id="codereview.java.rules.RuleDeclareClonePublic" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid implementing Cloneable without overriding clone()" id="codereview.java.rules.cloneable.RuleCloneableOverrideClone" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Implement Cloneable interface when clone() is overridden" id="codereview.java.rules.cloneable.RuleCloneableImplementCloneable" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling constructors in the clone() method" id="codereview.java.rules.RuleDoNotUseConstructor" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Always declare clone() with CloneNotSupportedException for Cloneable classes" id="codereview.java.rules.AlwaysDeclareCloneMethodForCloneable" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid declaring variables of basic and array types in the same statement" id="codereview.java.rules.declaration.RuleDeclarationMixedDeclaration" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using explicit string literals, declare constants instead" id="codereview.java.rules.declaration.RuleDeclarationDeclareConstants" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+			<result fileId="3" line="9" />
+			<result fileId="3" line="10" />
+			<result fileId="3" line="11" />
+			<result fileId="3" line="12" />
+			<result fileId="5" line="18" />
+			<result fileId="5" line="20" />
+			<result fileId="5" line="22" />
+			<result fileId="5" line="24" />
+			<result fileId="5" line="26" />
+			<result fileId="5" line="29" />
+			<result fileId="1" line="23" />
+			<result fileId="1" line="25" />
+			<result fileId="1" line="44" />
+			<result fileId="1" line="44" />
+			<result fileId="1" line="97" />
+			<result fileId="1" line="137" />
+			<result fileId="1" line="143" />
+			<result fileId="1" line="144" />
+			<result fileId="1" line="145" />
+			<result fileId="1" line="146" />
+			<result fileId="1" line="147" />
+			<result fileId="1" line="148" />
+			<result fileId="1" line="177" />
+			<result fileId="1" line="177" />
+			<result fileId="6" line="21" />
+			<result fileId="6" line="26" />
+			<result fileId="4" line="7" />
+			<result fileId="7" line="6" />
+			<result fileId="7" line="9" />
+			<result fileId="8" line="16" />
+		</RULE>
+		<RULE name="Avoid declaring multiple variables in a single statement" id="codereview.java.rules.declaration.RuleDeclarationMultipleDeclaration" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+			<result fileId="5" line="9" />
+		</RULE>
+		<RULE name="Avoid using interfaces or abstract classes just to declare common constants" id="codereview.java.rules.declaration.RuleDeclarationInterfaceConstants" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid C-style syntax when declaring arrays" id="codereview.java.rules.declaration.RuleDeclarationCArrayStyle" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+			<result fileId="2" line="12" />
+		</RULE>
+		<RULE name="Avoid using java.awt.peer interfaces directly" id="codereview.java.rules.awt.RuleAwtPeer" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid returning null instead of Enumeration" id="codereview.java.rules.nulls.RuleNullEnumeration" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid returning null instead of Iterator" id="codereview.java.rules.nulls.RuleNullIterator" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid returning null instead of empty array" id="codereview.java.rules.nulls.RuleNullEmptyArray" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid null assignments outside of a field/variable declaration" id="codereview.java.rules.RuleNeverAssignNull" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid a return of a boolean variable as the only statement in an if/else" id="codereview.java.rules.conditional.RuleConditionalReturnTrueFalse" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="If/else statement can generate a NullPointerException" id="codereview.java.rules.RuleConditionalNullException" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid using if/else statements for short conditions" id="codereview.java.rules.conditional.RuleConditionalTernary" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using assignments inside 'if' conditions" id="codereview.java.rules.RuleAvoidAssignmentInIfCondition" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using negation in if else conditions" id="codereview.java.rules.conditional.RuleConditionalNegationIfCondition" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using &quot;break&quot; and &quot;continue&quot; with labels" id="codereview.java.rules.AvoidUsingBreakAndContinue" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid hard coding \n and \r as line separators" id="codereview.java.rules.portability.RulePortabilityLineSeparators" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid implementing java.awt.peer.* interfaces " id="codereview.java.rules.portability.AvoidUsingJavaAwtPeerInterfacesDirectly" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.System.getenv()" id="codereview.java.rules.portability.RulePortabilitySystemGetenv" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid hard coding file separators when creating a java.io.File" id="codereview.java.rules.portability.RulePortabilityFileSeparator" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Use for loops instead of while loops" id="codereview.java.rules.use_for_instead_of_while" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+			<result fileId="3" line="15" />
+			<result fileId="1" line="123" />
+		</RULE>
+		<RULE name="Avoid a for loop without a condition" id="codereview.java.rules.loop.RuleLoopNoConditionForLoop" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling contains() inside a loop" id="codereview.java.rules.loop.RuleLoopCallListContains" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid using continue statements" id="codereview.java.rules.loop.RuleLoopContinueStatement" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid re-using control variables in nested loops" id="codereview.java.rules.LoopsControlNested" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid using loops to copy arrays" id="codereview.java.rules.RuleAvoidUsingLoopsToCopyArrays" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid a for loop without an initializer and an incrementor" id="codereview.java.rules.loop.RuleLoopNoInitIncrForLoop" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid assigning loop control variables in the body of for loops" id="codereview.java.rules.loop.RuleLoopAssignLoopVariable" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid method invocations in the loop condition statement" id="codereview.java.rules.RuleLoopMethodInvocationInCondition" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using Enumeration, use Iterator instead" id="codereview.java.rules.RuleAvoidUsingEnumeration" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always provide an '@invariant' tag for all protected classes" id="codereview.java.rules.protected_invariant_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide JavaDoc comments for public classes and interfaces" id="codereview.java.rules.AlwaysHavePublicClassJavadoc" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+			<result fileId="2" line="3" />
+			<result fileId="5" line="8" />
+			<result fileId="1" line="17" />
+			<result fileId="6" line="13" />
+			<result fileId="4" line="2" />
+			<result fileId="8" line="12" />
+		</RULE>
+		<RULE name="Always provide JavaDoc comments for protected classes and interfaces" id="codereview.java.rules.AlwaysHaveProtectedClassJavadoc" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always provide an '@invariant' tag for all public classes" id="codereview.java.rules.public_invariant_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide JavaDoc comments for a toString() method" id="codereview.java.rules.provide_toString" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Always provide the @concurrency JavaDoc tag and a description for synchronized 'private' methods and blocks" id="codereview.java.rules.AlwaysHavePrivateConcurrencyJavadocTag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide an '@post' tag for all protected methods" id="codereview.java.rules.protected_post_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide the @return JavaDoc tag for public methods with a return type" id="codereview.java.rules.AlwaysHavePublicMethodReturnTag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always provide @throws tag in the correct order for each exception thrown by a public method" id="codereview.java.rules.CheckPublicThrowsTag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always provide an '@pre' tag for all public methods" id="codereview.java.rules.public_pre_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide an '@post' tag for all private methods" id="codereview.java.rules.private_post_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide an '@pre' tag for all protected methods" id="codereview.java.rules.protected_pre_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid TODO comments in production code" id="codereview.java.rules.AvoidTODOComment" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide @throws tag in the correct order for each exception thrown by a protected method" id="codereview.java.rules.CheckProtectedThrowsTag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid placing non-JavaDoc comments in between JavaDoc and class/method declarations" id="codereview.java.rules.AvoidNonJavadocBetweenJavadocAndDeclaration" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Always provide the @concurrency JavaDoc tag and a description for synchronized 'package private' methods and blocks" id="codereview.java.rules.AlwaysHavePackagePrivateConcurrencyJavadocTag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid using the @exception tag for exceptions thrown" id="codereview.java.rules.avoid_exception_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Always provide JavaDoc comments for public methods" id="codereview.java.rules.AlwaysHavePublicMethodJavadoc" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+			<result fileId="2" line="10" />
+			<result fileId="3" line="7" />
+			<result fileId="5" line="35" />
+			<result fileId="1" line="19" />
+			<result fileId="6" line="17" />
+			<result fileId="4" line="5" />
+			<result fileId="7" line="5" />
+			<result fileId="8" line="14" />
+			<result fileId="8" line="44" />
+		</RULE>
+		<RULE name="Always provide @param tags in the correct order for private methods" id="codereview.java.rules.check_private_param_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always provide the @return JavaDoc tag for protected methods with a return type" id="codereview.java.rules.AlwaysHaveProtectedMethodReturnTag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always provide JavaDoc comments for protected methods" id="codereview.java.rules.AlwaysHaveProtectedMethodJavadoc" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always provide @version tag for classes and interfaces" id="codereview.java.rules.provide_version_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Always provide JavaDoc comments for public fields" id="codereview.java.rules.AlwaysHavePublicFieldJavadoc" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+			<result fileId="6" line="15" />
+		</RULE>
+		<RULE name="Always provide JavaDoc comments for protected fields" id="codereview.java.rules.AlwaysHaveProtectedFieldJavadoc" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always provide an '@invariant' tag for all private classes" id="codereview.java.rules.private_invariant_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide @param tags in the correct order for protected methods" id="codereview.java.rules.check_protected_param_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Always provide an '@post' tag for all public methods" id="codereview.java.rules.public_post_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide an '@pre' tag for all package private methods" id="codereview.java.rules.packageprivate_pre_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide @author tag for classes and interfaces" id="codereview.java.rules.provide_author_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Always provide @param tag in the correct order or package private methods" id="codereview.java.rules.check_package_private_param_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide an '@post' tag for all package private methods" id="codereview.java.rules.packageprivate_post_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide the @concurrency JavaDoc tag and a description for synchronized 'protected' methods and blocks" id="codereview.java.rules.AlwaysHaveProtectedConcurrencyJavadocTag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide an '@pre' tag for all private methods" id="codereview.java.rules.private_pre_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide a header block comment in each file" id="codereview.java.rules.AlwaysProvideAHeaderComment" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+			<result fileId="2" line="3" />
+			<result fileId="3" line="5" />
+			<result fileId="5" line="8" />
+			<result fileId="1" line="17" />
+			<result fileId="6" line="13" />
+			<result fileId="4" line="2" />
+			<result fileId="7" line="4" />
+			<result fileId="8" line="12" />
+		</RULE>
+		<RULE name="Always provide @throws tag in the correct order for each exception thrown by a package private method" id="codereview.java.rules.check_package_private_throws_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always provide the @return JavaDoc tag for package-private methods with a return type" id="codereview.java.rules.AlwaysHavePackagePrivateMethodReturnTag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always provide an '@invariant' tag for all package private classes" id="codereview.java.rules.packageprivate_invariant_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always provide @param tags in the correct order for public methods" id="codereview.java.rules.check_public_param_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Always provide @throws tag in the correct order for each exception thrown by a private method" id="codereview.java.rules.check_private_throws_tag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always provide the @return JavaDoc tag for private methods with a return type" id="codereview.java.rules.AlwaysHavePrivateMethodReturnTag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always provide the @concurrency JavaDoc tag and a description for synchronized 'public' methods and blocks" id="codereview.java.rules.AlwaysHavePublicConcurrencyJavadocTag" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid using static collections or maps" id="codereview.java.rules.AvoidStaticCollections" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid using 'Date[]', use 'long[]' instead" id="codereview.java.rules.AvoidUsingDateArray" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid empty synchronized block" id="codereview.java.rules.threads.RuleNeverHaveEmptySynchronizedBlock" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Thread.run()" id="codereview.java.rules.AvoidCallingRun" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid Synchronized Blocks with an invocation to notify() or notifyAll() as the only statement" id="codereview.java.rules.RuleAvoidNotifyWithoutChange" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid synchronizing on a java.util.concurrent.locks.Lock object" id="codereview.java.rules.RuleAvoidSynchronizationOnLock" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling Thread.interrupted() on an arbitrary Thread object" id="codereview.java.rules.RuleAvoidThreadInterrupted" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Runtime.runFinalizersOnExit()" id="codereview.java.rules.AvoidRunfinalizeronexit" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Thread.stop()" id="codereview.java.threads.stop" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Object.notify(), use java.lang.Object.notifyAll() instead" id="codereview.java.threads.notifyall" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using while() and sleep(), use wait() and notify() instead" id="codereview.java.threads.whilesleep" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Thread.destroy()" id="codereview.java.threads.destroy" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling wait() on a java.util.concurrent.locks.Condition object" id="codereview.java.rules.RuleAvoidMonitorWaitOnCondition" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Thread.suspend()" id="codereview.java.threads.suspend" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling Thread.currentThread().interrupted() in a thread's run() method" id="codereview.java.rules.RuleAvoidCurrentThreadInterrupt" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.util.concurrent.locks.Condition.await() outside of a while loop" id="codereview.java.rules.RuleThreadsAwaitInLoop" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid using synchronized modifier in method declaration" id="codereview.java.threads.synchronizedmethod" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Provide a run() method for subclasses of Thread" id="codereview.java.rules.RuleProvideRunMethod" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Object.notify() from non-synchronized blocks" id="codereview.java.threads.nonsynchronizednotify" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid overriding a synchronized method with a non-synchronized one" id="codereview.java.threads.overridesynchronizable" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid extending java.lang.Thread" id="codereview.java.threads.extendthread" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Object.wait() outside of a while loop" id="codereview.java.threads.waitoutsideloop" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid using &quot;this&quot; as a lock in synchronized statements" id="codereview.java.threads.synchronizedthis" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Object.wait() from non-synchronized blocks" id="codereview.java.threads.nonsynchronizedwait" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Thread.yield()" id="codereview.java.threads.yield" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Thread.resume()" id="codereview.java.threads.resume" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling java.lang.Object.notifyAll() from non-synchronized blocks" id="codereview.java.threads.nonsynchronizednotifyall" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid/Enforce usage of &quot;*&quot; in import statements" id="com.ibm.xtools.analysis.codereview.java.rules.RuleImportStatement" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+			<result fileId="3" line="4" />
+			<result fileId="5" line="3" />
+			<result fileId="5" line="4" />
+			<result fileId="1" line="4" />
+			<result fileId="1" line="14" />
+			<result fileId="7" line="3" />
+		</RULE>
+		<RULE name="Avoid using deprecated classes, interfaces, fields and methods" id="codereview.java.rules.AvoidDeprecatedApi" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid comparing float points" id="codereview.java.rules.NeverCompareFloatPoints" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid invoking &quot;runFinalizerOnExit()&quot;" id="codereview.java.rules.RuleAvoidSystemRunFinalizerExit" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Always use a constant String when invoking an SQL statement method with a String parameter" id="codereview.java.rules.RuleStatementConstantStringSQL" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid assigning a variable to itself" id="codereview.java.rules.RuleAvoidAssignVarToItself" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling setSize() inside componentResized()" id="codereview.java.rules.AvoidCallingSetsizeInComponnetresized" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid multiple returns in methods" id="codereview.java.rules.RuleAlwaysHaveOnlyOneReturn" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Always write one statement per line" id="codereview.java.rules.AlwaysWriteOneStatementPerLine" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid Unnecessary return statement at the end of void methods" id="codereview.java.rules.RuleAvoidReturnInVoidMethod" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid empty if statements and empty loops" id="codereview.java.rules.statement.RuleStatementEmptyStatement" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid using labeled statements" id="codereview.java.rules.statement.no_label_statement" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid adding a container to itself" id="codereview.java.rules.RuleAvoidAddingContainerToItself" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid assigning to a variable a value that it already has" id="codereview.java.rules.RuleAvoidRepeatAssignments" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid immediately overriding an increment" id="codereview.java.rules.RuleAvoidOverwrittenIncrement" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid invoking &quot;System.exit()&quot;" id="codereview.java.rules.RuleStatementInvokeSystemExit" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Always surround if and loop statements with curly braces" id="codereview.java.rules.statement.RuleStatementSurroundWithBraces" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+			<result fileId="2" line="20" />
+		</RULE>
+		<RULE name="Avoid unnecessary instanceof() calls" id="codereview.java.rules.AvoidUnnecessaryInstanceof" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling this.getClass.getResource() from an extended class" id="codereview.java.rules.RuleStatementGetResource" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid passing a 0 as the index to a java.sql.ResultSet getter or update methods" id="codereview.java.rules.RuleAvoidZeroParamResultSet" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid returning null in a method declaration" id="codereview.java.rules.RuleAvoidReturnNull" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using do-while statements" id="codereview.java.rules.avoid_do_while" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid assigning a value to a local variable that is never used" id="codereview.java.rules.RuleAvoidDeadStore" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid empty switch statements" id="codereview.java.rules.RuleNeverHaveEmptySwitchStatements" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid passing a 0 as the index to a java.sql.PreparedStatement setter method" id="codereview.java.rules.RuleAvoidZeroParamPreparedStatement" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Always check/use the return value of a method invocation" id="codereview.java.rules.RuleAlwaysCheckMethodValue" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+			<result fileId="7" line="10" />
+			<result fileId="8" line="19" />
+			<result fileId="8" line="50" />
+		</RULE>
+		<RULE name="Avoid using objects to access static fields and methods" id="codereview.java.rules.AvoidUsingObjectsToAccessStaticMembers" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling next() in hasNext()" id="codereview.java.rules.RuleAvoidInvokingNextInHasNext" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid using continue statements" id="codereview.java.rules.RuleAvoidContinueStatement" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid declaring non-transient fields of non-serializable type inside of a serializable class" id="codereview.java.rules.serialization.RuleSerializationSerializableField" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+			<result fileId="8" line="28" />
+		</RULE>
+		<RULE name="Always have a return type of java.lang.Object from readResolve() methods" id="codereview.java.rules.serialization.RuleAlwaysReturnObjectInRResolve" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid declaring transient fields in non-serializable classes" id="codereview.java.rules.serialization.RuleSerializationTransientField" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Always declare a constructor for a class that implements java.io.Externalizable" id="codereview.java.rules.serialization.RuleSerializationExternalizable" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Always declare readObject() and writeObject() as private in externalizable or serializable classes" id="codereview.java.rules.serialization.RuleSerializationReadWriteObject" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid passing an object that is not serializable to the method writeObect() in java.io.ObjectOutput" id="codereview.java.rules.serialization.RuleAlwaysSerializableObjectInObjectWrite" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Always create a static final serialVersionUID field in serializable classes" id="codereview.java.rules.serialization.RuleSerializationSerialVersionUID" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+			<result fileId="5" line="8" />
+			<result fileId="8" line="26" />
+		</RULE>
+		<RULE name="Always declare readResolve() and writeReplace() as protected in externalizable or serializable classes" id="codereview.java.rules.serialization.RuleSerializationResolveObject" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid Non-Serializable classes with a Serializable inner class" id="codereview.java.rules.serialization.RuleSerializationInnerClass" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Always implement java.io.Serializable if implementing java.lang.Comparable" id="codereview.java.rules.serialization.RuleSerializationComparable" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Do not call non-&quot;final&quot;, non-&quot;static&quot;, non-&quot;private&quot; methods from constructors" id="codereview.java.rules.RuleCallFinalStaticPrivateMethodsFromConstructor" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+			<result fileId="5" line="13" />
+			<result fileId="5" line="19" />
+			<result fileId="5" line="21" />
+			<result fileId="5" line="23" />
+			<result fileId="5" line="25" />
+			<result fileId="5" line="27" />
+			<result fileId="5" line="29" />
+			<result fileId="5" line="30" />
+			<result fileId="5" line="31" />
+			<result fileId="8" line="31" />
+			<result fileId="8" line="36" />
+			<result fileId="8" line="36" />
+			<result fileId="8" line="37" />
+			<result fileId="8" line="38" />
+			<result fileId="8" line="39" />
+			<result fileId="8" line="40" />
+			<result fileId="8" line="41" />
+		</RULE>
+		<RULE name="Avoid reading from an uninitialized field in a constructor" id="codereview.java.rules.RuleAvoidReadUninitializedField" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling an abstract method in a constructor in an abstract class" id="codereview.java.rules.constructors.RuleConstructorsAbstractMethods" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid unnecessary constructors" id="codereview.java.rules.RuleNeverHaveUnnecessaryConstructor" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Always provide 'private' constructors for a utility class" id="codereview.java.rules.RulePrivateConstructorForUtilityClass" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+			<result fileId="2" line="3" />
+			<result fileId="3" line="5" />
+			<result fileId="5" line="8" />
+			<result fileId="6" line="13" />
+			<result fileId="4" line="2" />
+			<result fileId="7" line="4" />
+			<result fileId="8" line="12" />
+		</RULE>
+		<RULE name="Do not declare 'public' constructors in non-public classes" id="codereview.java.rules.constructors.no_public_constructor" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+			<result fileId="8" line="30" />
+			<result fileId="8" line="34" />
+		</RULE>
+		<RULE name="Avoid calling an overridable method in a constructor" id="codereview.java.rules.constructors.RuleConstructorsOverridableMethods" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+			<result fileId="5" line="13" />
+			<result fileId="5" line="19" />
+			<result fileId="5" line="21" />
+			<result fileId="5" line="23" />
+			<result fileId="5" line="25" />
+			<result fileId="5" line="27" />
+			<result fileId="5" line="29" />
+			<result fileId="5" line="30" />
+			<result fileId="5" line="31" />
+			<result fileId="8" line="37" />
+			<result fileId="8" line="38" />
+			<result fileId="8" line="39" />
+			<result fileId="8" line="40" />
+			<result fileId="8" line="41" />
+		</RULE>
+		<RULE name="Declare only 'private' constructors for a utility class" id="codereview.java.rules.RuleOnlyPrivateConstructorForUtilityClass" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+			<result fileId="5" line="8" />
+		</RULE>
+		<RULE name="Declare only 'protected' constructors in abstract classes" id="codereview.java.rules.RuleOnlyProtectedConstructorInAbstractClass" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid catching java.lang.Error exceptions" id="codereview.java.rules.exceptions.RuleExceptionsCatchJavaLangError" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid catching IllegalMonitorStateException" id="codereview.java.rules.exceptions.RuleAvoidCatchIllegalMonitorStateException" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using instanceof operator to check the type of exception in the catch clause" id="codereview.java.rules.exceptions.RuleExceptionsInstanceofCatch" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid throwing many exceptions within the same method" id="codereview.java.rules.exceptions.RuleExceptionsAbuseControlFlow" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid extending java.lang.RuntimeException" id="codereview.java.rules.exceptions.RuleExceptionsExtendRuntimeException" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid catching a checked exception that is not thrown within the try{} block" id="codereview.java.rules.exceptions.RuleExceptionsCatchGeneric" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+			<result fileId="1" line="82" />
+			<result fileId="1" line="178" />
+		</RULE>
+		<RULE name="Avoid instantiating java.lang.Error" id="codereview.java.rules.exceptions.RuleExceptionsThrowError" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid empty catch blocks" id="codereview.java.rules.exceptions.RuleNeverHaveEmptyCatchBlocks" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always declare user defined exceptions as final" id="codereview.java.rules.exceptions.RuleExceptionsUserExceptionFinal" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid logging an exception and returning from a catch block" id="codereview.java.rules.exceptions.RuleAvoidLogExcpetionAndReturn" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid throwing java.lang.Error exceptions" id="codereview.java.rules.exceptions.RuleExceptionsThrowJavaLangError" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid returning from a finally block" id="codereview.java.rules.exceptions.RuleNeverReturnFromFinallyBlock" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid throwing RuntimeException" id="codereview.java.rules.exceptions.RuleExceptionsThrowRunTimeException" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid throwing NullPointerExceptions" id="codereview.java.rules.exceptions.RuleExceptionsThrowNullPointer" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid instantiating java.lang.Exception" id="codereview.java.rules.exceptions.RuleExceptionsThrowException" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid logging an exception and throwing an exception in a catch block" id="codereview.java.rules.exceptions.RuleAvoidLogAndThrowExcpetion" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid extending java.lang.Error" id="codereview.java.rules.exceptions.RuleExceptionsExtendError" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid empty try blocks" id="codereview.java.rules.exceptions.RuleNeverHaveEmptyTryBlocks" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid extending java.lang.Throwable" id="codereview.java.rules.exceptions.RuleExceptionsExtendThrowable" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid catching java.lang.Throwable" id="codereview.java.rules.exceptions.RuleExceptionsCatchThrowable" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid empty finally blocks" id="codereview.java.rules.exceptions.RuleNeverHaveEmptyFinallyBlocks" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always list specific checked exceptions in the throws clause" id="codereview.java.rules.exceptions.RuleExceptionsSpecificExceptions" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+			<result fileId="1" line="95" />
+		</RULE>
+		<RULE name="Avoid instantiating java.lang.Throwable" id="codereview.java.rules.exceptions.RuleExceptionsThrowThrowable" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid catching NullPointerExceptions" id="codereview.java.rules.exceptions.RuleExceptionsCatchNullPointer" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid catching java.lang.Exception" id="codereview.java.rules.exceptions.RuleExceptionsCatchJavaLangException" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+			<result fileId="1" line="82" />
+			<result fileId="1" line="178" />
+		</RULE>
+		<RULE name="Always ensure that the 'next()' method in an Iterator class can throw java.util.NoSuchElementException" id="codereview.java.rules.exceptions.RuleAlwaysThrowExceptionInNext" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using equals() to compare objects of different types" id="codereview.java.rules.comparison.RuleAvoidEqualsDifferentTypes" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid comparisons with Long.MAX_VALUE and Long.MIN_VALUE that will always return the same result" id="codereview.java.rules.comparison.RuleAvoidMaxMinLongComparison" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid comparisons with Double.MAX_VALUE and Double.MIN_VALUE that will always return the same result" id="codereview.java.rules.comparison.RuleAvoidMaxMinDoubleComparison" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid comparisons with Short.MAX_VALUE and Short.MIN_VALUE that will always return the same result" id="codereview.java.rules.comparison.RuleAvoidMaxMinShortComparison" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid comparisons with Character.MAX_VALUE and Character.MIN_VALUE that will always return the same result" id="codereview.java.rules.comparison.RuleAvoidMaxMinCharComparison" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always override both java.lang.Object.equals() and java.lang.Object.hashCode()" id="codereview.java.rules.comparison.RuleComparisonEqualsHashCode" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid comparisons with Integer.MAX_VALUE and Integer.MIN_VALUE that will always return the same result" id="codereview.java.rules.comparison.RuleAvoidMaxMinIntComparison" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using equals() method with arrays" id="codereview.java.rules.comparison.RuleCompareArrays" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid comparing a variable to itself" id="codereview.java.rules.comparison.RuleAvoidSelfComparison" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid comparisons with Float.MAX_VALUE and Float.MIN_VALUE that will always return the same result" id="codereview.java.rules.comparison.RuleAvoidMaxMinFloatComparison" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Ensure method name is equals() and not equal()" id="codereview.java.rules.comparison.RuleEqualsMethodName" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using java.lang.Class.getName() to compare classes" id="codereview.java.rules.comparison.RuleComparisonClassNameComparison" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid use of non-short logic circuit logic in comparison statements" id="codereview.java.rules.comparison.RuleAvoidNonShortCircuitLogic" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid using == and != to check if a float/double value is NaN" id="codereview.java.rules.comparison.RuleAvoidEqualityNaN" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid comparing (a&amp;0) to 0" id="codereview.java.rules.comparison.RuleCompareAndZeroToZero" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using == and != for java.lang.Object comparisons" id="codereview.java.rules.comparison.RuleComparisonReferenceEquality" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Always place constants on the left side of the equals()" id="codereview.java.rules.comparison.RuleComparisonPlaceConstants" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdationquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid using == and != to compare String objects" id="codereview.java.rules.comparison.RuleComparisonString" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid comparisons with Byte.MAX_VALUE and Byte.MIN_VALUE that will always return the same result" id="codereview.java.rules.comparison.RuleAvoidMaxMinByteComparison" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always use instanceof in an equals() method implementation" id="codereview.java.rules.comparison.RuleComparisonInstanceOfEquals" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always check object type when casting a Collection to a abstract Collection" id="codereview.java.rules.RuleAlwaysCheckCollectionCasting" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid unnecessary upcasting" id="codereview.java.rules.AvoidUnecessaryUpcasting" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Always check the object type before casting it" id="codereview.java.rules.RuleAlwaysCheckCasting" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid casting primitive types to lower precision" id="codereview.java.rules.casting.RuleCastingPrimitives" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid returning java.lang.Object, downcast to specific type instead" id="codereview.java.rules.casting.RuleCastingObjectDowncast" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+	</CATEGORY>
+	<CATEGORY name="Private API" id="analysis.codereview.java.privateapi">
+		<RULE name="Avoid using com.ibm.ejs.* package" id="com.ibm.xtools.analysis.codereview.java.j2se.privateapi.websphere.RulePrivateComIbmEjs" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using com.ibm.ws.* package" id="com.ibm.xtools.analysis.codereview.java.j2se.privateapi.websphere.RulePrivateComIbmWs" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using sun.*" id="com.ibm.xtools.analysis.codereview.java.j2se.privateapi.sun.RulePrivateSunApi" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+	</CATEGORY>
+	<CATEGORY name="Security" id="com.ibm.xtools.analysis.codereview.java.security">
+		<RULE name="Avoid instantiating  java.security.Permission" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.instanciatingpermission" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling  java.security.Security.setProperty()" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.securitysetproperty" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling  java.security.AccessController.doPrivileged()" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.accesscontrollerdoprivileged" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling  java.lang.System.getSecurityManager()" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.systemgetsecuritymanager" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid instantiating  java.security.Policy" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.instanciatingpolicy" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling  java.security.AccessController.getContext()" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.accesscontrollergetcontext" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling  java.security.Policy.getPolicy()" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.policygetpolicy" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling  java.security.Policy.setPolicy()" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.policysetpolicy" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid privileged block of more than 5 lines" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.privilegedblocklimit" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid using  java.lang.SecurityManager" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.usingsecuritymanager" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid instantiating java.lang.ClassLoader" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.instanciatingclassloader" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling  java.security.AccessController.checkPermission()" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.accesscontrollercheck" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling  java.lang.System.setSecurityManager()" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.systemsetsecuritymanager" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling  java.security.Security.getProperty()" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.securitygetproperty" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling  javax.security.auth.Subject.doAsPrivileged()" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.subjectdoasprivileged" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling  java.lang.System.loadLibrary()  or  java.lang.Runtime.loadLibrary()" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.loadlibrary" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid calling  javax.security.auth.Subject.doAs()" id="com.ibm.xtools.analysis.codereview.java.security.j2ee.subjectdoas" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always create final class extending  java.security.Permission" id="com.ibm.xtools.analysis.codereview.java.security.j2se.finalpermission" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid defining new  java.lang.ClassLoader  type" id="com.ibm.xtools.analysis.codereview.java.security.j2se.extendingclassloader" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Avoid overriding check* methods in  java.lang.SecurityManager  as stubs" id="com.ibm.xtools.analysis.codereview.java.security.j2se.checkstub" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarnquickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid non final public static fields" id="com.ibm.xtools.analysis.codereview.java.security.j2se.nonfinalpublicstaticfields" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulesevere_obj.gif">
+		</RULE>
+		<RULE name="Avoid protected native methods" id="com.ibm.xtools.analysis.codereview.java.security.j2se.protectednative" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid catching  java.lang.SecurityException" id="com.ibm.xtools.analysis.codereview.java.security.j2se.catchingsecurityexception" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulercmdation_obj.gif">
+		</RULE>
+		<RULE name="Avoid extending  java.security.Permission" id="com.ibm.xtools.analysis.codereview.java.security.j2se.extendingpermission" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\rulewarn_obj.gif">
+		</RULE>
+		<RULE name="Always make reference to System resource transient" id="com.ibm.xtools.analysis.codereview.java.security.j2se.referencetosystemhandle" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+		<RULE name="Avoid public native methods" id="com.ibm.xtools.analysis.codereview.java.security.j2se.publicnative" severityImage="C:\Users\svaithiling3\IBM\rationalsdp\workspace\.metadata\.plugins\com.ibm.rsaz.analysis.core\icons\ruleseverequickfix_obj.gif">
+		</RULE>
+	</CATEGORY>
+</PROVIDER>
+	<files>
+		<file id="6" path="/SampleJavaExamples/src/excelFormatingSample/ExcelFormating.java" />
+		<file id="1" path="/SampleJavaExamples/src/excelFormatingSample/ExcelCopySheet.java" />
+		<file id="5" path="/SampleJavaExamples/src/aWTWindowExample/AWTBorderLayoutDemo.java" />
+		<file id="8" path="/SampleJavaExamples/src/swingExampleImage/SwingExampleImage.java" />
+		<file id="7" path="/SampleJavaExamples/src/SwingExample/SwingExample.java" />
+		<file id="3" path="/SampleJavaExamples/src/ArrayListExample/ArrayListExample.java" />
+		<file id="2" path="/SampleJavaExamples/src/ArrayExample/ArrayExample.java" />
+		<file id="4" path="/SampleJavaExamples/src/HelloWorld.java" />
+	</files>
+</report>

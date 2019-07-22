@@ -1,0 +1,83 @@
+
+A0.) Setup new CFA on roduction box (user id: mptsuser).  
+
+ 
+
+A1.)CFA Name: ex. hsl_chkpoint_cfa (queue information as follows). Rest of the config can be taken from cfa: buildfa and changed the path/content as needed for this CFA.
+
+ 
+
+data.mq.queue.name=DWPMPTPR4.HSLCHKPT.DA.QUEUE
+
+exception.mq.queue.name=DWPMPTPR4.HSLCHKPT.EX.QUEUE
+
+command.mq.queue.name=DWPMPTPR4.HSLCHKPT.CMD.QUEUE
+
+quarantine.mq.queue.name=DWPMPTPR4.HSLCHKPT.TO.OPC.D.QUEUE
+
+ 
+
+A2.) Above new CFA need to be part of SETUP table entry (for Machine logs)
+
+ 
+
+select * from SETUP where C_report=4305
+
+ 
+
+A3.) Above new CFA need to be monitored from Health Check dashboard.
+
+Update - HLTHCHK_DSHBRD_CONFIG
+
+ 
+
+A4.) Above new CFA information need to be configured in XML generator process (on AIX side). ex CFA_ID=11
+
+ 
+
+A5.) Above new CFA information need to be added to cfa_description and cfa_instance tables (2 tables). ex CFA_ID=11 (datatype=2, CPTS_LENGTH=14).
+
+ 
+
+A6.) Above new CFA need to be added to MachineOutFileRemoval.sh script.
+
+ 
+
+dwpmptpr4a:/clocal/mptsgrp/user/mptsuser/workarea/healthcheck $ date
+
+Thu Jan 26 15:27:26 EST 2017
+
+dwpmptpr4a:/clocal/mptsgrp/user/mptsuser/workarea/healthcheck $ pwd
+
+/clocal/mptsgrp/user/mptsuser/workarea/healthcheck
+
+dwpmptpr4a:/clocal/mptsgrp/user/mptsuser/workarea/healthcheck $ ls -ltr Machine*.sh
+
+-rwxrwxrwx    1 mptsuser mptsgrp        1548 Aug 01 22:05 MachineOutFileRemoval.sh
+
+dwpmptpr4a:/clocal/mptsgrp/user/mptsuser/workarea/healthcheck $
+
+ 
+
+A7.) Above CFA need to be added to scripts that which impacted "SeRV01717576" changes. Please check with Eswar / Zahid if any further clarifications needed on this item (i.e. for. CFA auto restart for certain pattern catch)
+
+No Impact of SeRV01717576
+
+ 
+
+A8.) Test this new  CFA (stop/restart and verify that change is shown on the HCDB page and also in the log files.
+
+ 
+
+A9.) 2nd exception CFA instance is not needed at this time. As needed it will be setup later as part of another task as and when required.
+
+ 
+
+A10.) Restart the XML generator module.
+
+ 
+
+A11.) Communicate with plant ICT team to create data processing xml into this cfa.
+
+
+
